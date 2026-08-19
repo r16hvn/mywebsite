@@ -1,0 +1,3962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Rachan Mall — a curious mind
+</title>
+
+<meta
+    name="description"
+    content="Rachan Mall — curious about almost everything."
+>
+
+
+<style>
+
+/* =====================================================
+   FONTS
+===================================================== */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap'
+);
+
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --bg: #f2f0ea;
+
+    --paper: #f7f5ef;
+
+    --ink: #11110f;
+
+    --muted: #77756d;
+
+    --line: #d6d2c8;
+
+    --accent: #7650e8;
+
+}
+
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    background: var(--bg);
+
+    color: var(--ink);
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    line-height: 1.55;
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.025;
+
+    background-image:
+
+        linear-gradient(
+            #111 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            #111 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+.wrap {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 44px)
+        );
+
+    margin: auto;
+
+}
+
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.logo {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+}
+
+
+.logo span {
+
+    color:
+        var(--accent);
+
+}
+
+
+.nav {
+
+    display: flex;
+
+    gap: 25px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 12px;
+
+    color:
+        var(--muted);
+
+}
+
+
+.nav a {
+
+    transition:
+        0.2s;
+
+}
+
+
+.nav a:hover {
+
+    color:
+        var(--ink);
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height:
+        calc(100vh - 82px);
+
+    display:
+        grid;
+
+    align-items:
+        center;
+
+    padding:
+        90px 0 110px;
+
+}
+
+
+.hero-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.35fr
+        0.65fr;
+
+    gap:
+        70px;
+
+    align-items:
+        end;
+
+}
+
+
+.kicker {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+    color:
+        var(--muted);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.08em;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.hero h1 {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            70px,
+            10vw,
+            145px
+        );
+
+    line-height:
+        0.83;
+
+    letter-spacing:
+        -0.07em;
+
+    font-weight:
+        normal;
+
+    margin:
+        0;
+
+}
+
+
+.hero h1 em {
+
+    color:
+        var(--accent);
+
+}
+
+
+.hero-copy {
+
+    max-width:
+        400px;
+
+    color:
+        #5f5d56;
+
+    font-size:
+        15px;
+
+}
+
+
+.hero-copy p {
+
+    margin:
+        0 0 25px;
+
+}
+
+
+.scroll {
+
+    display:
+        inline-flex;
+
+    gap:
+        10px;
+
+    align-items:
+        center;
+
+    border-bottom:
+        1px solid var(--ink);
+
+    padding-bottom:
+        5px;
+
+}
+
+
+.scroll span {
+
+    color:
+        var(--accent);
+
+}
+
+
+.update {
+
+    margin-top:
+        25px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        10px;
+
+    color:
+        #99958c;
+
+}
+
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section {
+
+    padding:
+        120px 0;
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.section-top {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        180px
+        1fr;
+
+    gap:
+        50px;
+
+    margin-bottom:
+        60px;
+
+}
+
+
+.label {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+    color:
+        var(--muted);
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.08em;
+
+}
+
+
+.section-title {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            5.5vw,
+            72px
+        );
+
+    line-height:
+        0.98;
+
+    letter-spacing:
+        -0.055em;
+
+    font-weight:
+        normal;
+
+    margin:
+        0;
+
+    max-width:
+        850px;
+
+}
+
+
+.section-title em {
+
+    font-style:
+        italic;
+
+    color:
+        #66635d;
+
+}
+
+
+
+/* =====================================================
+   THINKING
+===================================================== */
+
+.thoughts {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap:
+        1px;
+
+    background:
+        var(--line);
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.thought {
+
+    background:
+        var(--paper);
+
+    min-height:
+        240px;
+
+    padding:
+        34px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    transition:
+        0.3s;
+
+}
+
+
+.thought:hover {
+
+    background:
+        #ece9e1;
+
+}
+
+
+.thought-number {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        10px;
+
+    color:
+        #99958c;
+
+}
+
+
+.thought p {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            25px,
+            3vw,
+            38px
+        );
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -0.035em;
+
+    margin:
+        40px 0 0;
+
+}
+
+
+
+/* =====================================================
+   BUILT
+===================================================== */
+
+.project {
+
+    border-top:
+        1px solid var(--line);
+
+    padding:
+        45px 0;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        150px
+        1fr
+        auto;
+
+    gap:
+        35px;
+
+    align-items:
+        start;
+
+    transition:
+        0.25s;
+
+}
+
+
+.project:last-child {
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.project:hover
+.project-name {
+
+    transform:
+        translateX(8px);
+
+}
+
+
+.project-num {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+    color:
+        var(--muted);
+
+}
+
+
+.project-name {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            32px,
+            4vw,
+            55px
+        );
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.045em;
+
+    transition:
+        0.25s;
+
+}
+
+
+.project-desc {
+
+    max-width:
+        620px;
+
+    color:
+        #6e6b63;
+
+    margin-top:
+        14px;
+
+    font-size:
+        14px;
+
+}
+
+
+.project-meta {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.8;
+
+    color:
+        var(--muted);
+
+    text-align:
+        right;
+
+}
+
+
+.project-meta strong {
+
+    color:
+        var(--ink);
+
+    font-weight:
+        500;
+
+}
+
+
+.project-link {
+
+    display:
+        inline-block;
+
+    margin-top:
+        16px;
+
+    color:
+        var(--accent);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+}
+
+
+
+/* =====================================================
+   CURRENTLY
+===================================================== */
+
+.current {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:
+        1px;
+
+    background:
+        var(--line);
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.current-box {
+
+    background:
+        var(--paper);
+
+    padding:
+        42px;
+
+}
+
+
+.current-box h3 {
+
+    margin:
+        0 0 25px;
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        32px;
+
+    font-weight:
+        normal;
+
+}
+
+
+.current-list {
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+.current-list li {
+
+    padding:
+        13px 0;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size:
+        14px;
+
+    color:
+        #65625b;
+
+}
+
+
+.current-list li::before {
+
+    content:
+        "→";
+
+    color:
+        var(--accent);
+
+    margin-right:
+        12px;
+
+}
+
+
+
+/* =====================================================
+   INTERSECTION
+===================================================== */
+
+.intersection {
+
+    margin-top:
+        70px;
+
+}
+
+
+.intersection h3 {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            52px
+        );
+
+    line-height:
+        1;
+
+    letter-spacing:
+        -0.04em;
+
+    font-weight:
+        normal;
+
+    margin:
+        0 0 35px;
+
+}
+
+
+.intersection h3 em {
+
+    color:
+        var(--accent);
+
+}
+
+
+.intersection-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            1fr
+        );
+
+    gap:
+        1px;
+
+    background:
+        var(--line);
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.intersection-item {
+
+    background:
+        var(--paper);
+
+    padding:
+        25px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+}
+
+
+.intersection-item span {
+
+    color:
+        var(--accent);
+
+}
+
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:
+        90px;
+
+}
+
+
+.about-big {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            54px
+        );
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -0.045em;
+
+    margin:
+        0;
+
+}
+
+
+.about-text {
+
+    color:
+        #66635c;
+
+    max-width:
+        510px;
+
+}
+
+
+.about-text p {
+
+    margin-top:
+        0;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.note {
+
+    margin-top:
+        40px;
+
+    border-left:
+        2px solid var(--accent);
+
+    padding-left:
+        18px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+    color:
+        #77736b;
+
+}
+
+
+
+/* =====================================================
+   CONTRADICTIONS
+===================================================== */
+
+.contradictions {
+
+    margin-top:
+        90px;
+
+}
+
+
+.contradiction-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    border-top:
+        1px solid var(--line);
+
+}
+
+
+.contradiction {
+
+    padding:
+        22px 0;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        13px;
+
+    color:
+        #68655e;
+
+}
+
+
+.contradiction:nth-child(odd) {
+
+    padding-right:
+        35px;
+
+    border-right:
+        1px solid var(--line);
+
+}
+
+
+.contradiction:nth-child(even) {
+
+    padding-left:
+        35px;
+
+}
+
+
+.contradiction b {
+
+    color:
+        var(--ink);
+
+    font-weight:
+        500;
+
+}
+
+
+
+/* =====================================================
+   RABBIT HOLES
+===================================================== */
+
+.rabbit-holes {
+
+    margin-top:
+        90px;
+
+}
+
+
+.rabbit-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        1px;
+
+    background:
+        var(--line);
+
+    border:
+        1px solid var(--line);
+
+}
+
+
+.rabbit {
+
+    background:
+        var(--paper);
+
+    padding:
+        30px;
+
+    min-height:
+        190px;
+
+}
+
+
+.rabbit small {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        10px;
+
+    color:
+        var(--muted);
+
+}
+
+
+.rabbit h4 {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        27px;
+
+    line-height:
+        1;
+
+    margin:
+        35px 0 10px;
+
+    font-weight:
+        normal;
+
+}
+
+
+.rabbit p {
+
+    font-size:
+        13px;
+
+    color:
+        #77736b;
+
+    margin:
+        0;
+
+}
+
+
+
+/* =====================================================
+   BELIEFS
+===================================================== */
+
+.beliefs {
+
+    margin-top:
+        90px;
+
+}
+
+
+.belief {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        80px
+        1fr;
+
+    gap:
+        25px;
+
+    padding:
+        25px 0;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.belief-number {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        10px;
+
+    color:
+        var(--accent);
+
+}
+
+
+.belief-text {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            22px,
+            3vw,
+            34px
+        );
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -0.03em;
+
+}
+
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline {
+
+    margin-top:
+        90px;
+
+}
+
+
+.timeline-row {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        100px
+        1fr;
+
+    gap:
+        35px;
+
+    padding:
+        22px 0;
+
+    border-bottom:
+        1px solid var(--line);
+
+}
+
+
+.timeline-year {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+    color:
+        var(--accent);
+
+}
+
+
+.timeline-text {
+
+    font-size:
+        14px;
+
+    color:
+        #65625b;
+
+}
+
+
+.timeline-text strong {
+
+    color:
+        var(--ink);
+
+}
+
+
+
+/* =====================================================
+   TERMINAL
+===================================================== */
+
+.terminal {
+
+    margin-top:
+        70px;
+
+    background:
+        #171614;
+
+    color:
+        #d9d6ce;
+
+    border-radius:
+        3px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 18px 60px
+        rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+}
+
+
+.term-head {
+
+    padding:
+        11px 15px;
+
+    border-bottom:
+        1px solid #34312c;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        10px;
+
+    color:
+        #77736b;
+
+}
+
+
+.term-body {
+
+    padding:
+        25px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        12px;
+
+    line-height:
+        2;
+
+}
+
+
+.purple {
+
+    color:
+        #b79aff;
+
+}
+
+
+.term-green {
+
+    color:
+        #b8ff8a;
+
+}
+
+
+.term-muted {
+
+    color:
+        #77736b;
+
+}
+
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+
+    min-height:
+        70vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+}
+
+
+.contact-title {
+
+    font-family:
+        "DM Serif Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            60px,
+            10vw,
+            135px
+        );
+
+    line-height:
+        0.85;
+
+    letter-spacing:
+        -0.07em;
+
+    font-weight:
+        normal;
+
+    margin:
+        0;
+
+}
+
+
+.contact-title em {
+
+    color:
+        var(--accent);
+
+}
+
+
+.contact-bottom {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-end;
+
+    gap:
+        30px;
+
+}
+
+
+.contact-copy {
+
+    max-width:
+        410px;
+
+    color:
+        #6d6a62;
+
+}
+
+
+.contact-links {
+
+    display:
+        flex;
+
+    gap:
+        25px;
+
+    flex-wrap:
+        wrap;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        11px;
+
+}
+
+
+.contact-links a {
+
+    border-bottom:
+        1px solid var(--ink);
+
+    padding-bottom:
+        4px;
+
+}
+
+
+.contact-links a:hover {
+
+    color:
+        var(--accent);
+
+    border-color:
+        var(--accent);
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding:
+        28px 0;
+
+    border-top:
+        1px solid var(--line);
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        #8a867e;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size:
+        10px;
+
+}
+
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+}
+
+
+.reveal.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (
+    max-width: 760px
+) {
+
+
+    .wrap {
+
+        width:
+            min(
+                100% - 30px,
+                1180px
+            );
+
+    }
+
+
+    .nav {
+
+        display:
+            none;
+
+    }
+
+
+    .hero {
+
+        padding:
+            65px 0 90px;
+
+    }
+
+
+    .hero-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            55px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                65px,
+                19vw,
+                105px
+            );
+
+    }
+
+
+    section {
+
+        padding:
+            85px 0;
+
+    }
+
+
+    .section-top {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            15px;
+
+        margin-bottom:
+            40px;
+
+    }
+
+
+    .thoughts {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .current {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .about {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rabbit-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .intersection-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .thought {
+
+        min-height:
+            190px;
+
+    }
+
+
+    .project {
+
+        grid-template-columns:
+            45px
+            1fr;
+
+        gap:
+            15px;
+
+        padding:
+            32px 0;
+
+    }
+
+
+    .project-meta {
+
+        grid-column:
+            2;
+
+        text-align:
+            left;
+
+    }
+
+
+    .contradiction-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .contradiction:nth-child(odd) {
+
+        padding-right:
+            0;
+
+        border-right:
+            0;
+
+    }
+
+
+    .contradiction:nth-child(even) {
+
+        padding-left:
+            0;
+
+    }
+
+
+    .timeline-row {
+
+        grid-template-columns:
+            65px
+            1fr;
+
+        gap:
+            20px;
+
+    }
+
+
+    .belief {
+
+        grid-template-columns:
+            45px
+            1fr;
+
+    }
+
+
+    .contact {
+
+        min-height:
+            65vh;
+
+    }
+
+
+    .contact-bottom {
+
+        display:
+            block;
+
+    }
+
+
+    .contact-links {
+
+        margin-top:
+            40px;
+
+    }
+
+
+    footer {
+
+        display:
+            block;
+
+    }
+
+
+    footer span {
+
+        display:
+            block;
+
+        margin-bottom:
+            8px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="wrap">
+
+
+
+<!-- =================================================
+     NAV
+================================================== -->
+
+
+<nav>
+
+
+    <div class="logo">
+
+        rachan<span>.mall</span>
+
+    </div>
+
+
+    <div class="nav">
+
+        <a href="#thinking">
+            thinking
+        </a>
+
+        <a href="#built">
+            built
+        </a>
+
+        <a href="#now">
+            now
+        </a>
+
+        <a href="#about">
+            about
+        </a>
+
+    </div>
+
+
+</nav>
+
+
+
+<main>
+
+
+
+<!-- =================================================
+     HERO
+================================================== -->
+
+
+<section
+    class="hero"
+    style="border-top:0"
+>
+
+
+<div class="hero-grid">
+
+
+
+<div class="reveal">
+
+
+    <div class="kicker">
+
+        somewhere between
+        curiosity and obsession
+
+    </div>
+
+
+    <h1>
+
+        i think
+        <br>
+
+        about
+        <em>things.</em>
+
+    </h1>
+
+
+</div>
+
+
+
+<div class="hero-copy reveal">
+
+
+    <p>
+
+        I'm Rachan.
+
+        I like understanding
+        how things work,
+        why people do what
+        they do, and what
+        happens when an idea
+        is taken seriously
+        enough to build.
+
+    </p>
+
+
+    <p>
+
+        I'm interested in
+        technology, money,
+        people, design,
+        businesses, systems,
+        stories and all the
+        strange connections
+        between them.
+
+    </p>
+
+
+    <p>
+
+        I don't really know
+        exactly what I'm
+        becoming yet.
+
+        I'm okay with that.
+
+    </p>
+
+
+    <a
+        class="scroll"
+        href="#thinking"
+    >
+
+        enter
+
+        <span>
+            ↓
+        </span>
+
+    </a>
+
+
+    <div class="update">
+
+        last updated · 19.08.2026
+
+    </div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     THINKING
+================================================== -->
+
+
+<section id="thinking">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        01 / thinking
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        questions are usually
+        more interesting than
+        <em>answers.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="thoughts">
+
+
+
+<article class="thought reveal">
+
+
+    <div class="thought-number">
+
+        001
+
+    </div>
+
+
+    <p>
+
+        Can technology make
+        people better
+        decision-makers?
+
+    </p>
+
+
+</article>
+
+
+
+<article class="thought reveal">
+
+
+    <div class="thought-number">
+
+        002
+
+    </div>
+
+
+    <p>
+
+        Why do some ideas
+        become memories while
+        others disappear?
+
+    </p>
+
+
+</article>
+
+
+
+<article class="thought reveal">
+
+
+    <div class="thought-number">
+
+        003
+
+    </div>
+
+
+    <p>
+
+        What happens when AI
+        meets something
+        fundamentally human?
+
+    </p>
+
+
+</article>
+
+
+
+<article class="thought reveal">
+
+
+    <div class="thought-number">
+
+        004
+
+    </div>
+
+
+    <p>
+
+        How much of the future
+        can we actually build
+        ourselves?
+
+    </p>
+
+
+</article>
+
+
+
+<article class="thought reveal">
+
+
+    <div class="thought-number">
+
+        005
+
+    </div>
+
+
+    <p>
+
+        Why do some businesses
+        become movements while
+        others disappear?
+
+    </p>
+
+
+</article>
+
+
+
+<article class="thought reveal">
+
+
+    <div class="thought-number">
+
+        006
+
+    </div>
+
+
+    <p>
+
+        Is curiosity a skill,
+        or simply a refusal to
+        stop asking why?
+
+    </p>
+
+
+</article>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     BUILT
+================================================== -->
+
+
+<section id="built">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        02 / things i've built
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        sometimes the only way
+        to understand an idea
+        is to <em>make it.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div>
+
+
+
+<!-- CROWD FLOW -->
+
+
+<article class="project reveal">
+
+
+    <div class="project-num">
+
+        01
+
+    </div>
+
+
+    <div>
+
+
+        <div class="project-name">
+
+            CrowdFlow AI
+
+        </div>
+
+
+        <div class="project-desc">
+
+            I kept wondering whether
+            a crowd could be understood
+            before it became a problem.
+
+            CrowdFlow explores that idea
+            through computer vision,
+            crowd-density analysis,
+            congestion prediction
+            and intelligent routing.
+
+        </div>
+
+
+        <a
+            class="project-link"
+            href="https://github.com/Panishganiga-maker/cc.inc"
+            target="_blank"
+        >
+
+            explore the code ↗
+
+        </a>
+
+
+    </div>
+
+
+    <div class="project-meta">
+
+        <strong>
+            AI / CV
+        </strong>
+
+        <br>
+
+        real-time systems
+
+        <br>
+
+        React
+
+    </div>
+
+
+</article>
+
+
+
+<!-- QUANT -->
+
+
+<article class="project reveal">
+
+
+    <div class="project-num">
+
+        02
+
+    </div>
+
+
+    <div>
+
+
+        <div class="project-name">
+
+            Quant + AI
+
+        </div>
+
+
+        <div class="project-desc">
+
+            An ongoing rabbit hole
+            into markets, machine
+            learning and the question
+            of whether machines can
+            help us make better
+            decisions under uncertainty.
+
+        </div>
+
+
+        <div class="project-link">
+
+            still exploring
+
+        </div>
+
+
+    </div>
+
+
+    <div class="project-meta">
+
+        <strong>
+            research
+        </strong>
+
+        <br>
+
+        finance
+
+        <br>
+
+        machine learning
+
+    </div>
+
+
+</article>
+
+
+
+<!-- ROBOTICS -->
+
+
+<article class="project reveal">
+
+
+    <div class="project-num">
+
+        03
+
+    </div>
+
+
+    <div>
+
+
+        <div class="project-name">
+
+            machines that move
+
+        </div>
+
+
+        <div class="project-desc">
+
+            Experiments with ESP32,
+            Arduino, sensors,
+            wireless control and
+            physical systems.
+
+            Software becomes a little
+            more interesting when it
+            can touch the real world.
+
+        </div>
+
+
+        <div class="project-link">
+
+            experiments
+
+        </div>
+
+
+    </div>
+
+
+    <div class="project-meta">
+
+        <strong>
+            embedded
+        </strong>
+
+        <br>
+
+        C / C++
+
+        <br>
+
+        electronics
+
+    </div>
+
+
+</article>
+
+
+
+<!-- LOOP -->
+
+
+<article class="project reveal">
+
+
+    <div class="project-num">
+
+        04
+
+    </div>
+
+
+    <div>
+
+
+        <div class="project-name">
+
+            Loop.co
+
+        </div>
+
+
+        <div class="project-desc">
+
+            A brand-management
+            experiment built around
+            identity, consistency,
+            clarity and recall.
+
+            I became interested in
+            why some brands become
+            familiar without constantly
+            asking for attention.
+
+        </div>
+
+
+        <div class="project-link">
+
+            creative / systems
+
+        </div>
+
+
+    </div>
+
+
+    <div class="project-meta">
+
+        <strong>
+            branding
+        </strong>
+
+        <br>
+
+        identity
+
+        <br>
+
+        strategy
+
+    </div>
+
+
+</article>
+
+
+
+<!-- EXPERIMENTS -->
+
+
+<article class="project reveal">
+
+
+    <div class="project-num">
+
+        05
+
+    </div>
+
+
+    <div>
+
+
+        <div class="project-name">
+
+            small experiments
+
+        </div>
+
+
+        <div class="project-desc">
+
+            Little programs, hardware
+            experiments, interfaces,
+            automations, random ideas
+            and things built simply
+            because I wanted to know
+            whether I could.
+
+        </div>
+
+
+        <a
+            class="project-link"
+            href="https://github.com/r16hvn"
+            target="_blank"
+        >
+
+            my github ↗
+
+        </a>
+
+
+    </div>
+
+
+    <div class="project-meta">
+
+        <strong>
+            experiments
+        </strong>
+
+        <br>
+
+        code
+
+        <br>
+
+        curiosity
+
+    </div>
+
+
+</article>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     CURRENTLY
+================================================== -->
+
+
+<section id="now">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        03 / currently
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        things i'm
+        <em>obsessed with</em>
+        right now.
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="current">
+
+
+
+<div class="current-box reveal">
+
+
+    <h3>
+
+        learning
+
+    </h3>
+
+
+    <ul class="current-list">
+
+
+        <li>
+
+            artificial intelligence
+
+        </li>
+
+
+        <li>
+
+            financial markets
+            & economics
+
+        </li>
+
+
+        <li>
+
+            systems and
+            how they behave
+
+        </li>
+
+
+        <li>
+
+            machine learning
+            beyond tutorials
+
+        </li>
+
+
+        <li>
+
+            research and
+            asking better questions
+
+        </li>
+
+
+        <li>
+
+            building things
+            that actually work
+
+        </li>
+
+
+    </ul>
+
+
+</div>
+
+
+
+<div class="current-box reveal">
+
+
+    <h3>
+
+        exploring
+
+    </h3>
+
+
+    <ul class="current-list">
+
+
+        <li>
+
+            ideas that could
+            become businesses
+
+        </li>
+
+
+        <li>
+
+            technology × people
+
+        </li>
+
+
+        <li>
+
+            AI × finance
+
+        </li>
+
+
+        <li>
+
+            design × psychology
+
+        </li>
+
+
+        <li>
+
+            how great brands
+            become memorable
+
+        </li>
+
+
+        <li>
+
+            whatever rabbit hole
+            appears next
+
+        </li>
+
+
+    </ul>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="intersection reveal">
+
+
+    <h3>
+
+        most of what interests
+        me happens somewhere
+        in the <em>middle.</em>
+
+    </h3>
+
+
+    <div class="intersection-grid">
+
+
+        <div class="intersection-item">
+
+            <span>×</span>
+            technology
+
+        </div>
+
+
+        <div class="intersection-item">
+
+            <span>×</span>
+            finance
+
+        </div>
+
+
+        <div class="intersection-item">
+
+            <span>×</span>
+            people
+
+        </div>
+
+
+        <div class="intersection-item">
+
+            <span>×</span>
+            creativity
+
+        </div>
+
+
+        <div class="intersection-item">
+
+            <span>×</span>
+            business
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     ABOUT
+================================================== -->
+
+
+<section id="about">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        04 / about
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        i'm still figuring out
+        <em>what i'm becoming.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="about">
+
+
+
+<div class="reveal">
+
+
+    <p class="about-big">
+
+        I don't think a degree,
+        a job title or a list of
+        skills tells you much
+        about a person.
+
+    </p>
+
+
+</div>
+
+
+
+<div class="about-text reveal">
+
+
+    <p>
+
+        I'm interested in a lot
+        of things.
+
+        Technology.
+        Finance.
+        Design.
+        Business.
+        People.
+        Ideas.
+
+    </p>
+
+
+    <p>
+
+        Sometimes completely
+        unrelated things somehow
+        become related six months
+        later.
+
+    </p>
+
+
+    <p>
+
+        I've always been drawn
+        towards things I don't
+        completely understand.
+
+        That's probably why I
+        keep moving between
+        technology, finance,
+        creativity and business.
+
+    </p>
+
+
+    <p>
+
+        I like taking things apart —
+        sometimes literally,
+        sometimes intellectually —
+        and understanding what
+        makes them work.
+
+    </p>
+
+
+    <p>
+
+        And when something keeps
+        bothering me, I usually
+        end up trying to build
+        something around it.
+
+    </p>
+
+
+    <div class="note">
+
+        currently trying to become
+        someone who asks better questions.
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- CONTRADICTIONS -->
+
+
+<div class="contradictions">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        a few contradictions
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        I don't think people are
+        supposed to fit neatly
+        into <em>categories.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="contradiction-grid">
+
+
+    <div class="contradiction reveal">
+
+        <b>analytical</b>
+        / emotional
+
+    </div>
+
+
+    <div class="contradiction reveal">
+
+        <b>technical</b>
+        / creative
+
+    </div>
+
+
+    <div class="contradiction reveal">
+
+        <b>ambitious</b>
+        / uncertain
+
+    </div>
+
+
+    <div class="contradiction reveal">
+
+        <b>obsessed</b>
+        / easily distracted
+
+    </div>
+
+
+    <div class="contradiction reveal">
+
+        <b>thinks too much</b>
+        / builds anyway
+
+    </div>
+
+
+    <div class="contradiction reveal">
+
+        <b>wants answers</b>
+        / loves questions
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- RABBIT HOLES -->
+
+
+<div class="rabbit-holes">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        rabbit holes
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        things that somehow
+        keep pulling me
+        <em>in.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="rabbit-grid">
+
+
+
+<article class="rabbit reveal">
+
+
+    <small>
+
+        01 / TECHNOLOGY
+
+    </small>
+
+
+    <h4>
+
+        artificial intelligence
+
+    </h4>
+
+
+    <p>
+
+        Not just how models work,
+        but what happens when
+        intelligence becomes
+        something we can engineer.
+
+    </p>
+
+
+</article>
+
+
+
+<article class="rabbit reveal">
+
+
+    <small>
+
+        02 / MONEY
+
+    </small>
+
+
+    <h4>
+
+        markets
+
+    </h4>
+
+
+    <p>
+
+        Incentives, uncertainty,
+        psychology, numbers and
+        the stories people tell
+        themselves about money.
+
+    </p>
+
+
+</article>
+
+
+
+<article class="rabbit reveal">
+
+
+    <small>
+
+        03 / PEOPLE
+
+    </small>
+
+
+    <h4>
+
+        behaviour
+
+    </h4>
+
+
+    <p>
+
+        Why people make the
+        decisions they make —
+        especially when they
+        think nobody is watching.
+
+    </p>
+
+
+</article>
+
+
+
+<article class="rabbit reveal">
+
+
+    <small>
+
+        04 / CREATIVITY
+
+    </small>
+
+
+    <h4>
+
+        design
+
+    </h4>
+
+
+    <p>
+
+        Why some things feel
+        right before we can
+        explain why.
+
+    </p>
+
+
+</article>
+
+
+
+<article class="rabbit reveal">
+
+
+    <small>
+
+        05 / BUSINESS
+
+    </small>
+
+
+    <h4>
+
+        ideas
+
+    </h4>
+
+
+    <p>
+
+        Turning observations
+        into products, products
+        into businesses and
+        businesses into something
+        people care about.
+
+    </p>
+
+
+</article>
+
+
+
+<article class="rabbit reveal">
+
+
+    <small>
+
+        06 / LIFE
+
+    </small>
+
+
+    <h4>
+
+        becoming
+
+    </h4>
+
+
+    <p>
+
+        The slightly terrifying
+        process of figuring out
+        who you want to become
+        while you're becoming it.
+
+    </p>
+
+
+</article>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- BELIEFS -->
+
+
+<div class="beliefs">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        things i believe
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        a few ideas I keep
+        coming <em>back to.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="belief reveal">
+
+
+    <div class="belief-number">
+
+        01
+
+    </div>
+
+
+    <div class="belief-text">
+
+        Curiosity is more
+        valuable than certainty.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="belief reveal">
+
+
+    <div class="belief-number">
+
+        02
+
+    </div>
+
+
+    <div class="belief-text">
+
+        A good question can
+        be more valuable than
+        a good answer.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="belief reveal">
+
+
+    <div class="belief-number">
+
+        03
+
+    </div>
+
+
+    <div class="belief-text">
+
+        Build the thing before
+        deciding whether it
+        is possible.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="belief reveal">
+
+
+    <div class="belief-number">
+
+        04
+
+    </div>
+
+
+    <div class="belief-text">
+
+        Don't confuse being
+        busy with moving forward.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="belief reveal">
+
+
+    <div class="belief-number">
+
+        05
+
+    </div>
+
+
+    <div class="belief-text">
+
+        You don't need to know
+        exactly where you're
+        going to start walking.
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- TIMELINE -->
+
+
+<div class="timeline">
+
+
+<div class="section-top reveal">
+
+
+    <div class="label">
+
+        a few chapters
+
+    </div>
+
+
+    <h2 class="section-title">
+
+        not a résumé.
+        just <em>breadcrumbs.</em>
+
+    </h2>
+
+
+</div>
+
+
+
+<div class="timeline-row reveal">
+
+
+    <div class="timeline-year">
+
+        2025
+
+    </div>
+
+
+    <div class="timeline-text">
+
+        <strong>
+            Started university.
+        </strong>
+
+        Began the AI/ML journey
+        and started discovering
+        how much there was
+        still to learn.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="timeline-row reveal">
+
+
+    <div class="timeline-year">
+
+        2025
+
+    </div>
+
+
+    <div class="timeline-text">
+
+        <strong>
+            Started building.
+        </strong>
+
+        From electronics and
+        robotics to software
+        and AI experiments.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="timeline-row reveal">
+
+
+    <div class="timeline-year">
+
+        2025–26
+
+    </div>
+
+
+    <div class="timeline-text">
+
+        <strong>
+            Started asking bigger questions.
+        </strong>
+
+        AI, finance, research,
+        businesses, branding and
+        what all of these things
+        have in common.
+
+    </div>
+
+
+</div>
+
+
+
+<div class="timeline-row reveal">
+
+
+    <div class="timeline-year">
+
+        now
+
+    </div>
+
+
+    <div class="timeline-text">
+
+        <strong>
+            Still figuring it out.
+        </strong>
+
+        Building, learning,
+        experimenting and
+        occasionally changing
+        my mind.
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- TERMINAL -->
+
+
+<div class="terminal reveal">
+
+
+<div class="term-head">
+
+    rachan@life ~ % whoami
+
+</div>
+
+
+<div class="term-body">
+
+
+<span class="purple">
+    const
+</span>
+
+rachan = {
+
+
+<br>
+
+
+&nbsp;&nbsp;curious:
+
+<span class="term-green">
+    true
+</span>,
+
+
+<br>
+
+
+&nbsp;&nbsp;building:
+
+<span class="term-green">
+    "always"
+</span>,
+
+
+<br>
+
+
+&nbsp;&nbsp;certainty:
+
+<span class="term-green">
+    "low"
+</span>,
+
+
+<br>
+
+
+&nbsp;&nbsp;questions:
+
+<span class="term-green">
+    "too many"
+</span>,
+
+
+<br>
+
+
+&nbsp;&nbsp;interests:
+
+<span class="term-green">
+    ["AI","finance","people","ideas"]
+</span>,
+
+
+<br>
+
+
+&nbsp;&nbsp;currentStatus:
+
+<span class="term-muted">
+    "figuring it out..."
+</span>
+
+
+<br>
+
+
+};
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =================================================
+     CONTACT
+================================================== -->
+
+
+<section id="contact">
+
+
+<div class="contact reveal">
+
+
+<div>
+
+
+<div class="label">
+
+    05 / say hello
+
+</div>
+
+
+<h2 class="contact-title">
+
+    let's see
+
+    <br>
+
+    where a
+    <em>conversation</em>
+
+    <br>
+
+    goes.
+
+</h2>
+
+
+</div>
+
+
+
+<div class="contact-bottom">
+
+
+<p class="contact-copy">
+
+    If you have an interesting
+    idea, a strange question,
+    something worth building,
+    or just want to talk —
+    I'm around.
+
+</p>
+
+
+
+<div class="contact-links">
+
+
+<a
+    href="https://github.com/r16hvn"
+    target="_blank"
+>
+
+    github ↗
+
+</a>
+
+
+<a
+    href="https://github.com/Panishganiga-maker/cc.inc"
+    target="_blank"
+>
+
+    crowdflow ↗
+
+</a>
+
+
+<a
+    href="https://www.linkedin.com/in/rachan-mall-780967381/"
+    target="_blank"
+>
+
+    linkedin ↗
+
+</a>
+
+
+<a
+    href="mailto:hello@example.com"
+>
+
+    email ↗
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =================================================
+     FOOTER
+================================================== -->
+
+
+<footer>
+
+
+<span>
+
+    © 2026 Rachan Mall
+
+</span>
+
+
+<span>
+
+    still becoming.
+
+</span>
+
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+
+const observer =
+
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(
+            entry => {
+
+                if (
+                    entry.isIntersecting
+                ) {
+
+                    entry
+                        .target
+                        .classList
+                        .add("show");
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            }
+        );
+
+    },
+
+    {
+        threshold: 0.12
+    }
+
+);
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+
+        element =>
+            observer.observe(
+                element
+            )
+
+    );
+
+
+
+/* =====================================================
+   HERO MOVEMENT
+===================================================== */
+
+
+const heroTitle =
+
+document.querySelector(
+    ".hero h1"
+);
+
+
+window.addEventListener(
+
+    "mousemove",
+
+    event => {
+
+        if (!heroTitle) {
+
+            return;
+
+        }
+
+
+        const x =
+
+            (
+                event.clientX /
+                window.innerWidth -
+                0.5
+            ) * 4;
+
+
+        const y =
+
+            (
+                event.clientY /
+                window.innerHeight -
+                0.5
+            ) * 4;
+
+
+        heroTitle.style.transform =
+
+            `translate(${x}px, ${y}px)`;
+
+    }
+
+);
+
+</script>
+
+
+</body>
+
+</html>
